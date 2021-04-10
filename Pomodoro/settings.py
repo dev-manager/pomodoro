@@ -25,7 +25,7 @@ SECRET_KEY = '-667c-1ns#z7ol#j75+^%)@qj8vevv1%69&0+8t*47evs%n!##'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['192.168.35.17', '1.228.173.94']
+ALLOWED_HOSTS = ['192.168.35.17', '1.228.173.94', '127.0.0.1', ]
 
 
 # Application definition
@@ -117,5 +117,15 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
+
+# 홈페이지에서 위 경로로 static file들에 접근할 수 있다.
 STATIC_URL = '/templates/'
-STATIC_ROOT = '/templates/'
+
+# 원본 폴더의 위치.
+STATICFILES_DIRS = [
+    BASE_DIR / "templates",
+    # 여러 폴더를 입력할 수 있음.
+]
+
+# 복사될 폴더. .gitignore에 추가한다.
+STATIC_ROOT = '/static'
